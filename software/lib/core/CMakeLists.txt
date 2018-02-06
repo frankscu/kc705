@@ -1,7 +1,7 @@
 include_directories(include)
 add_definitions("-DJADE_DLL_EXPORT")
 
-set(JADE_LEGACY_CORE_SRC src/DataTakingThread.cpp src/daq.cpp)
+set(JADE_LEGACY_CORE_SRC src/daqTest.cpp)
 set(JADE_LEGACY_CORE jadelegacy)
 add_library(${JADE_LEGACY_CORE} ${JADE_LEGACY_CORE_SRC})
 

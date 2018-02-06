@@ -1,25 +1,11 @@
 %module(directors="1") daq
-%include "std_string.i"
-%feature("director") EventListener;
 %{
-#include "daq.h"
+#include "daqTest.hh"
 %}
 
-// This is copied from cstring.i,
-// however I changed string -> bytes
-%define %cbytes_chunk_output(TYPEMAP,SIZE)
-%typemap(in,numinputs=0) TYPEMAP(char temp[SIZE]) {
-   $1 = ($1_ltype) temp;
-}
-%typemap(argout,fragment="t_output_helper") TYPEMAP {
-   PyObject *o = PyBytes_FromStringAndSize($1,SIZE);
-   $result = t_output_helper($result,o);
-}
-%enddef
+%import "std_string.i"
+%import "std_map.i"
+%import "std_pair.i"
+%import "std_vector.i"
 
-%cbytes_chunk_output(char *data, 1920+8);
-void DataTaker::get_recent_event(char *data);
-
-%ignore DataTakingThread;
-
-%include "daq.h"
+%include "daqTest.hh"
