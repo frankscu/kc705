@@ -32,6 +32,7 @@ using std::uint64_t;
 #define DLLEXPORT __declspec(dllimport)
 #else
 #define DLLEXPORT __declspec(dllexport)
+
 #pragma warning(disable: 4251)
 #pragma warning(disable: 4996)
 #endif

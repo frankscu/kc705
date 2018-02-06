@@ -12,6 +12,7 @@ set_source_files_properties(daq.i PROPERTIES CPLUSPLUS ON)
 swig_add_library(daq LANGUAGE python SOURCES daq.i)
 swig_link_libraries(daq ${JADE_LEGACY_CORE} ${PYTHON_LIBRARIES})
 
+
 if(WIN32)
   set(LIB_FILE_PYTHON Release/_daq.pyd)
 else()

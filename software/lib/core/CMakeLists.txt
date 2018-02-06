@@ -11,6 +11,11 @@ set(JADE_CORE_LIBRARY jadecore CACHE INTERNAL "Jade core library")
 add_library(${JADE_CORE_LIBRARY} SHARED ${JADE_CORE_SRC})
 target_link_libraries(${JADE_CORE_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
 
+aux_source_directory(src JADE_DAQ_SRC)
+set(JADE_DAQ_LIBRARY jadedaq CACHE INTERNAL "Jade core library")
+add_library(${JADE_DAQ_LIBRARY} SHARED ${JADE_DAQ_SRC})
+target_link_libraries(${JADE_DAQ_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
+
 add_subdirectory(pybind11)
 add_subdirectory(swig)
 

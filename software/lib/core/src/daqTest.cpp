@@ -2,7 +2,8 @@
 
 using namespace std::chrono_literals;
 
-daqTest::daqTest():opt_data_input("//./xillybus_read_32"),opt_reg("//./xillybus_mem_8"),opt_data_output("output"),opt_time_run("60"),opt_ev_print("10000"),data_output_path("test")
+
+daqTest::daqTest():opt_data_input("/tmp/test_pipe"),opt_reg("/tmp/test_reg"),opt_data_output("/tmp/test_output"),opt_time_run("60"),opt_ev_print("10000"),data_output_path("test")
 {
 }
 
@@ -10,19 +11,21 @@ daqTest::~daqTest()
 {
 }
 
-void daqTest::set_time_run(std::string time){
-    opt_time_run = time;
-}
 
 void daqTest::initial(){
     time_run = std::stoul(opt_time_run);
     ev_print = std::stoul(opt_ev_print);
 
     preg = new JadeRegCtrl(opt_reg);
-    preg->WriteByte(4, 15);
-    std::this_thread::sleep_for(100ms);
-    preg->WriteByte(3, 15);
-    pman = new JadeManager();
+    //preg->WriteByte(4, 15);
+    //std::this_thread::sleep_for(100ms);
+    //preg->WriteByte(3, 15);
+    //pman = new JadeManager();
+}
+
+/*
+void daqTest::set_time_run(std::string time){
+    opt_time_run = time;
 }
 
 void daqTest::set_input(std::string inPipe){
@@ -65,3 +68,4 @@ void daqTest::stop_run(){
     std::this_thread::sleep_for(std::chrono::milliseconds(time_run));
     pman->Stop();
 }
+*/

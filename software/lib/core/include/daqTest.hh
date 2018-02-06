@@ -14,13 +14,13 @@ class daqTest{
         ~daqTest();
        
         void initial(); 
-        void set_input(std::string);
-        void set_output();
-        void set_output_file(std::string);
-        void start_run();
-        void stop_run();
-        void set_time_run(std::string time);
-        void print_info();
+        //void set_input(std::string);
+        //void set_output();
+        //void set_output_file(std::string);
+        //void start_run();
+        //void stop_run();
+        //void set_time_run(std::string time);
+        //void print_info();
     
     private:
         
