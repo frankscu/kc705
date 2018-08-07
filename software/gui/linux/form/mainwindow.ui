@@ -91,7 +91,7 @@
             <item row="3" column="1">
              <widget class="QLineEdit" name="LineEdit_Online_cfName">
               <property name="text">
-               <string>/home/cepcdaq/JadePix/kc705/software/conf/sample_gui.json</string>
+               <string>/home/cepcdaq/JadePix/kc705_tlu/software/conf/sample_gui.json</string>
               </property>
              </widget>
             </item>

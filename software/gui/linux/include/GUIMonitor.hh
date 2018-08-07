@@ -37,7 +37,8 @@ class GUIMonitor : public JadeMonitor {
   std::mutex m_mx_get;
   uint32_t m_nx;
   uint32_t m_ny;
-  bool m_enbale_print_events;
+  bool m_enable_print_events;
+  bool m_enable_random_select;
   float m_monitor_percent;
   std::shared_ptr<TH2F> m_adc_counts;
   std::shared_ptr<TH2F> m_adc_counts_clone;
