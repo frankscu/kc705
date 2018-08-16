@@ -90,6 +90,7 @@ void GUIManager::config()
   size_t nsec = conf_man_para.GetIntValue("SecPerLoop");
   size_t nloop = conf_man_para.GetIntValue("N_Loops");
   std::string chip_address = conf_man_para.GetStringValue("ChipAddress");
+  std::string delay = conf_man_para.GetStringValue("DELAY");
 
   m_man->SetRegCtrl(pctrl);
   m_man->SetReader(pread);
@@ -98,6 +99,7 @@ void GUIManager::config()
   m_man->SetMonitor(std::dynamic_pointer_cast<JadeMonitor>(m_mnt));
   m_man->DeviceConnect();
   m_man->DeviceControl(chip_address);
+  m_man->DeviceControl(delay);
   m_man->DeviceControl("SET");
   std::cout << "Select address: " << chip_address << std::endl;
   m_man->DeviceDisconnect();

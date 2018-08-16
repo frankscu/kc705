@@ -59,7 +59,12 @@ void GUIMonitor::Monitor(JadeDataFrameSP df)
   }
 
   if (!m_df->GetCDSStatus()) {
+    m_ev_num++;
     return;
+  }
+
+  if (m_enable_print_events && m_ev_get != 0 && m_ev_num % m_ev_get == 0) {
+    df->PrintCDS(std::cout);
   }
 
   TRandom rdm;

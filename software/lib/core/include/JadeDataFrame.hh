@@ -33,6 +33,7 @@ class DLLEXPORT JadeDataFrame {
   uint32_t GetMatrixSizeY() const;
   uint32_t GetTriggerSerialOrder() const;
   void Print(std::ostream& os, size_t ws = 0) const;
+  void PrintCDS(std::ostream& os, size_t ws = 0) const;
   std::vector<int16_t> GetFrameCDS();
   bool GetCDSStatus();
   void CDS(JadeDataFrame& df);

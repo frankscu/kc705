@@ -210,7 +210,7 @@ void MainWindow::Update_Online_Image()
 
     pad2D1->cd();
     auto hist2D1 = (TH2F*)m_GUIManager->get_monitor()->GetADCCounts()->Clone("ADC_Counts");
-    pad2D1->SetLogz(1);
+    //pad2D1->SetLogz(1);
     hist2D1->Draw("COLZ");
 
     pad2D2->cd();
